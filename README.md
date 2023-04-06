@@ -1,7 +1,7 @@
 
 # JSON Storage Library
 
-goofy looking way for me to simplify .json storage in my projects
+goofy looking way for me to simplify .json storage in my python projects
 
 
 ## Acknowledgements
@@ -9,6 +9,8 @@ goofy looking way for me to simplify .json storage in my projects
 my momma for tellin me id always make it somewhere in life
 
 @coopikoop for being better at computer programming than me
+
+
 ## API Reference
 
 #### COMING SOON
