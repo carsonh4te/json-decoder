@@ -1,13 +1,17 @@
 import json
 import tkinter as tk
 import os
+direct = f"{os.getcwd()}/dumps"
 
 
 class Transfer:
+    direct = f"{os.getcwd()}/dumps"
+    if not os.path.exists(direct):
+        os.makedirs(direct)
+        print(f"dir {direct} created!")
 
     @staticmethod
     def add_to(x, y, file):
-        direct = r"/Users/cart/PycharmProjects/pythonProject/dumps"
         try:
             with open(file, "r") as json_file:
                 dump = json.load(json_file)
@@ -23,7 +27,6 @@ class Transfer:
 
     @staticmethod
     def write_to(data, file):
-        direct = r"/Users/cart/PycharmProjects/pythonProject/dumps"
         try:
             json_object = json.dumps(data, indent=4)
             with open(os.path.join(direct, file), "w") as json_file:
@@ -35,7 +38,6 @@ class Transfer:
 
     @staticmethod
     def read_from(x, page):
-        direct = r"/Users/cart/PycharmProjects/pythonProject/dumps"
         try:
             with open(os.path.join(direct, x), "r") as json_file:
                 data = json.load(json_file)
@@ -48,26 +50,26 @@ class Transfer:
 
 
 class Window:
-    direct = r"/Users/cart/PycharmProjects/pythonProject/dumps"
+    direct = f"{os.getcwd()}/dumps"
 
     def __init__(self):
         self.window = tk.Tk()
         self.window.title("JSON File Writer")
         self.window.geometry("725x475")
 
-        self.name_label = tk.Label(self.window, text="Name")
+        self.name_label = tk.Label(self.window, text="Username")
         self.name_label.grid(column=0, row=0, padx=5, pady=5)
 
         self.name_entry = tk.Entry(self.window, width=30)
         self.name_entry.grid(column=1, row=0, padx=5, pady=5)
 
-        self.data_label = tk.Label(self.window, text="Data")
+        self.data_label = tk.Label(self.window, text="Password")
         self.data_label.grid(column=0, row=1, padx=5, pady=5)
 
         self.data_entry = tk.Text(self.window)
         self.data_entry.grid(column=1, row=1, padx=5, pady=5)
 
-        self.file_label = tk.Label(self.window, text="File Name")
+        self.file_label = tk.Label(self.window, text="Admin Key")
         self.file_label.grid(column=0, row=2, padx=5, pady=5)
 
         self.file_entry = tk.Entry(self.window, width=30)
@@ -114,3 +116,4 @@ class Window:
 
 if __name__ == "__main__":
     Window()
+    
