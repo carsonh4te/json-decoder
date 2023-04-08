@@ -57,19 +57,19 @@ class Window:
         self.window.title("JSON File Writer")
         self.window.geometry("725x475")
 
-        self.name_label = tk.Label(self.window, text="Username")
+        self.name_label = tk.Label(self.window, text="Key")
         self.name_label.grid(column=0, row=0, padx=5, pady=5)
 
         self.name_entry = tk.Entry(self.window, width=30)
         self.name_entry.grid(column=1, row=0, padx=5, pady=5)
 
-        self.data_label = tk.Label(self.window, text="Password")
+        self.data_label = tk.Label(self.window, text="Data")
         self.data_label.grid(column=0, row=1, padx=5, pady=5)
 
         self.data_entry = tk.Text(self.window)
         self.data_entry.grid(column=1, row=1, padx=5, pady=5)
 
-        self.file_label = tk.Label(self.window, text="Admin Key")
+        self.file_label = tk.Label(self.window, text="file_name.json")
         self.file_label.grid(column=0, row=2, padx=5, pady=5)
 
         self.file_entry = tk.Entry(self.window, width=30)
